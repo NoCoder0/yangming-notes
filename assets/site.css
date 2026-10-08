@@ -26,7 +26,12 @@ button, a, summary { -webkit-tap-highlight-color: rgba(39,99,72,.14); }
 .progress-track { position: absolute; height: 3px; inset: auto 0 -1px; }
 #reading-progress { width: 0; height: 100%; background: var(--green); }
 .page { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
-.hero { max-width: 780px; margin: 0 auto; padding: 66px 0 38px; }
+.course-nav { max-width: 780px; margin: 28px auto 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.course-nav a { display: flex; flex-direction: column; justify-content: center; min-height: 68px; padding: 10px 15px; border: 1px solid var(--line); border-radius: 7px; text-decoration: none; font-size: 15px; line-height: 1.6; color: var(--muted); }
+.course-nav a:hover { background: #edf1e8; }
+.course-nav a[aria-current="page"] { background: #e5edde; border-color: #98b39a; color: #254c36; }
+.course-number { display: block; font-size: 11px; font-weight: 600; letter-spacing: .05em; margin-bottom: 2px; color: #667c69; }
+.hero { max-width: 780px; margin: 0 auto; padding: 40px 0 38px; }
 .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .1em; color: var(--muted); margin: 0 0 22px; }
 .lecture-number { display: inline-grid; place-items: center; width: 27px; height: 27px; background: #e3ebdf; border-radius: 50%; font-size: 11px; font-weight: 700; letter-spacing: 0; color: var(--green); }
 .eyebrow-line { width: 26px; height: 1px; background: #a7b7a9; }
@@ -70,6 +75,11 @@ tr:last-child td { border-bottom: 0; }
 tbody tr:nth-child(even) { background: #f8f9f3; }
 .site-footer { max-width: 780px; margin: 42px auto 0; padding: 20px 0 max(34px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .site-footer p { margin: 0; }
+.lecture-pagination { max-width: 780px; margin: 34px auto 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.lecture-pagination a { display: flex; flex-direction: column; min-height: 76px; border: 1px solid var(--line); border-radius: 7px; padding: 12px 18px; text-decoration: none; line-height: 1.7; background: var(--card); font-size: 15px; }
+.lecture-pagination a:hover { background: #edf1e8; }
+.lecture-pagination small { display: block; font-size: 11px; color: var(--muted); }
+.lecture-pagination .next { grid-column: 2; text-align: right; }
 .back-to-top { position: fixed; right: max(18px, env(safe-area-inset-right)); bottom: max(20px, env(safe-area-inset-bottom)); width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%; background: var(--green); box-shadow: 0 3px 12px #213d3126; text-decoration: none; color: white; font-size: 22px; z-index: 12; }
 .back-to-top[hidden] { display: none; }
 .back-to-top:hover { color: white; background: #17452f; }
@@ -96,6 +106,9 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
   .download { font-size: 12px; padding: 6px 10px; }
   .page { padding: 0 max(18px, env(safe-area-inset-left)); }
   .hero { padding: 31px 2px 27px; }
+  .course-nav { margin-top: 19px; gap: 7px; }
+  .course-nav a { min-height: 64px; padding: 8px 9px; font-size: 13px; }
+  .course-number { font-size: 10px; }
   .eyebrow { font-size: 11px; gap: 8px; margin-bottom: 18px; }
   h1 { font-size: 34px; margin-bottom: 18px; line-height: 1.4; }
   .mobile-break { display: block; }
@@ -112,10 +125,12 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
   th, td { padding: 12px; }
   .site-footer { margin-top: 14px; padding-bottom: 86px; display: block; line-height: 2.1; }
   .site-footer a { display: inline-flex; align-items: center; min-height: 44px; }
+  .lecture-pagination { gap: 9px; margin-top: 18px; }
+  .lecture-pagination a { padding: 11px; font-size: 14px; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
-  .topbar, .toc-shell, .back-to-top, .site-footer, .skip-link { display: none; }
+  .topbar, .toc-shell, .back-to-top, .site-footer, .skip-link, .course-nav, .lecture-pagination { display: none; }
   .page { max-width: none; padding: 0; }
   .hero { padding-top: 0; max-width: none; }
   .reading-layout { display: block; }
