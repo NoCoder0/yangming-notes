@@ -10,7 +10,7 @@
 
 ## 《六祖坛经》与禅宗修行
 
-第一讲样本，依讲解脉络分为六节。目录与各节时间索引都使用合集的原视频时间轴。
+全八讲，依讲解脉络分节。专题目录可按讲展开，时间索引均从该讲的原视频开头计算。
 
 [坛经专题目录](https://nocoder0.github.io/yangming-notes/tanjing/) · [读第一节](https://nocoder0.github.io/yangming-notes/tanjing/01-01.html)
 

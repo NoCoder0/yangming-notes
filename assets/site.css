@@ -140,9 +140,13 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
 .tanjing .catalog-link:hover { background: #ecdbc6; }
 .tanjing .brand-seal { background: #875434; }
 .tanjing .lecture-number { color: #70421e; background: #f0e4d5; }
-.episode-header { margin: 27px 0 11px; }
+.episode-group { margin: 15px 0; background: var(--card); border: 1px solid var(--line); border-radius: 8px; }
+.episode-header { position: relative; padding: 15px 44px 15px 16px; cursor: pointer; list-style: none; }
+.episode-header::-webkit-details-marker { display: none; }
 .episode-header h2 { font-size: 22px; line-height: 1.5; margin: 0 0 6px; color: #254938; }
-.episode-header p { margin: 0; color: var(--muted); font-size: 14px; }
+.episode-toggle { position: absolute; right: 14px; top: 15px; color: var(--muted); }
+.episode-group[open] .episode-toggle { transform: rotate(45deg); }
+.episode-group .episode-sections { margin: 0 12px 12px; }
 .episode-sections a { grid-template-columns: 3.5em minmax(0, 1fr) auto; }
 .episode-sections .catalog-duration { font-size: 12px; }
 .episode-range { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }

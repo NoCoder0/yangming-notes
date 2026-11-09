@@ -5,6 +5,18 @@ if (legacyLecture && legacyLecture.dataset.legacyAnchors.split(' ').includes(loc
   location.replace(legacyLecture.dataset.legacyLecture + location.search + location.hash);
 }
 
+if (document.querySelector('#episodes')) {
+  const openEpisode = hash => {
+    const episode = document.getElementById(hash.slice(1));
+    if (episode?.matches('.episode-group')) episode.open = true;
+  };
+  openEpisode(location.hash);
+  window.addEventListener('hashchange', () => openEpisode(location.hash));
+  document.querySelectorAll('.catalog-jumps a').forEach(link => {
+    link.addEventListener('click', () => openEpisode(link.hash));
+  });
+}
+
 const toc = document.querySelector('#toc');
 if (toc) {
   const desktop = window.matchMedia('(min-width: 961px)');
