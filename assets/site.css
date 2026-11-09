@@ -232,3 +232,6 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
   table { min-width: 0; }
   a { color: inherit; }
 }
+
+.reading-anchor { display: block; scroll-margin-top: calc(var(--header-height) + 24px); }
+.prose, .hero { overflow-wrap: anywhere; }
