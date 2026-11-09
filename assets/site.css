@@ -69,6 +69,9 @@ details[open] .toc-toggle { transform: rotate(45deg); }
 .section-mark { font-size: 13px; font-weight: 400; color: #708b72; letter-spacing: .1em; margin-right: 12px; vertical-align: middle; }
 .prose h3 { font-size: 19px; line-height: 1.65; margin: 34px 0 10px; scroll-margin-top: calc(var(--header-height) + 24px); }
 .prose p { margin: 14px 0; }
+.prose blockquote { margin: 20px 0; padding: 10px 16px; border-left: 3px solid #9daf96; background: #edf2e8; }
+.prose blockquote p { margin: 0; }
+.tanjing .prose blockquote { border-left-color: #b18867; background: #f4eade; }
 .prose strong { font-weight: 650; }
 .prose ul, .prose ol { padding-left: 1.5em; margin: 14px 0; }
 .prose li { padding-left: .15em; margin-bottom: 13px; }
@@ -120,6 +123,29 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
 .catalog-number, .catalog-duration { color: var(--muted); font-size: 13px; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .catalog-title { color: var(--ink); font-weight: 600; }
 .no-results { padding: 18px; border: 1px solid var(--line); border-radius: 7px; background: var(--card); color: var(--muted); }
+.portal-page { max-width: 980px; }
+.portal-hero { padding: 63px 0 30px; max-width: 680px; }
+.portal-hero > p:last-child { margin: 0; color: var(--muted); }
+.topic-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.topic-card { min-width: 0; display: flex; flex-direction: column; gap: 12px; padding: 24px; border: 1px solid var(--line); border-top: 4px solid var(--green); border-radius: 8px; background: var(--card); }
+.topic-card.tanjing { border-top-color: #9a613a; }
+.topic-card h2 { margin: 0; font-family: "Songti SC", "Noto Serif CJK SC", SimSun, serif; font-size: 25px; line-height: 1.45; }
+.topic-card p { margin: 0; }
+.topic-card .topic-meta { color: var(--muted); font-size: 13px; }
+.topic-card .topic-description { margin-bottom: 8px; }
+.topic-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px 14px; margin-top: auto; }
+.topic-actions a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; }
+.topic-actions .catalog-link { min-height: 44px; }
+.tanjing .catalog-link { color: #70421e; background: #f5eadc; border-color: #d7c1a8; }
+.tanjing .catalog-link:hover { background: #ecdbc6; }
+.tanjing .brand-seal { background: #875434; }
+.tanjing .lecture-number { color: #70421e; background: #f0e4d5; }
+.episode-header { margin: 27px 0 11px; }
+.episode-header h2 { font-size: 22px; line-height: 1.5; margin: 0 0 6px; color: #254938; }
+.episode-header p { margin: 0; color: var(--muted); font-size: 14px; }
+.episode-sections a { grid-template-columns: 3.5em minmax(0, 1fr) auto; }
+.episode-sections .catalog-duration { font-size: 12px; }
+.episode-range { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
 @media (min-width: 961px) { .toc-shell summary { pointer-events: none; } .toc-toggle { display: none; } }
 @media (max-width: 960px) {
   .page { max-width: 820px; padding: 0 26px; }
@@ -180,6 +206,14 @@ tbody tr:nth-child(even) { background: #f8f9f3; }
   .catalog-title { grid-row: 2; grid-column: 1 / -1; font-size: 16px; }
   .catalog-duration { grid-column: 2; grid-row: 1; }
   .catalog-number, .catalog-duration { font-size: 12px; }
+  .portal-hero { padding: 29px 0 22px; }
+  .portal-hero > p:last-child { font-size: 15px; }
+  .topic-grid { grid-template-columns: 1fr; gap: 14px; }
+  .topic-card { padding: 17px; gap: 9px; }
+  .topic-card h2 { font-size: 22px; }
+  .topic-card .topic-description { font-size: 15px; }
+  .episode-header h2 { font-size: 20px; }
+  .episode-sections a { grid-template-columns: minmax(0, 1fr) auto; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {

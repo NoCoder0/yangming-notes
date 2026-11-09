@@ -1,5 +1,10 @@
 'use strict';
 
+const legacyLecture = document.querySelector('[data-legacy-lecture]');
+if (legacyLecture && legacyLecture.dataset.legacyAnchors.split(' ').includes(location.hash.slice(1))) {
+  location.replace(legacyLecture.dataset.legacyLecture + location.search + location.hash);
+}
+
 const toc = document.querySelector('#toc');
 if (toc) {
   const desktop = window.matchMedia('(min-width: 961px)');
